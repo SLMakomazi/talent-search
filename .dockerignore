@@ -1,0 +1,13 @@
+.git
+.gradle
+build
+.idea
+.vscode
+.DS_Store
+.env
+.env.*
+.venv
+__pycache__
+*.log
+tmp
+temp
