@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: ${APP_DB_URL:jdbc:postgresql://localhost:5433/talent}
+    username: ${DB_USER:demo}
+    password: ${DB_PASSWORD:demo}
+  flyway:
+    enabled: true
+app:
+  source:
+    url: ${SOURCE_DB_URL:jdbc:postgresql://localhost:5433/company_mock}
+    username: ${SOURCE_DB_USER:company_reader}
+    password: ${SOURCE_DB_PASSWORD:company_reader_demo}
+  cv:
+    skills: ${CV_SKILLS:Java,Spring Boot,PostgreSQL,Docker,AWS,GitHub Actions,Kubernetes,Terraform,Python,React,Angular,SQL,Azure,TypeScript,Power BI}
+  sync:
+    enabled: ${SYNC_ENABLED:true}
+    fixed-delay-ms: ${SYNC_DELAY_MS:900000}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
